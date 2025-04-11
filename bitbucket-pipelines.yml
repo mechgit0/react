@@ -1,0 +1,22 @@
+image: node:18
+pipelines:
+ pull-requests:
+     live:
+      - step:
+          name: PR Checks - Install Dependencies and Build
+          caches:
+            - node
+          script:
+            - echo "Loading environment variables"
+            - npm install 
+            - npm run build 
+            - echo "checks completed"
+            - echo "pipeline change"
+    
+    
+      - step:
+          name: Send Notification
+          image: python:3.11
+          script:
+            - pip install yagmail
+            - python send_email.py
