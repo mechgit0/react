@@ -15,4 +15,4 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf  # Assuming custom Nginx config
       - ./build:/usr/share/nginx/html  # Assuming React build files are in the build folder
-    # No need for depends_on for nginx to wait for app
+    # No need for depends_on for nginx to wait for ap aaap
